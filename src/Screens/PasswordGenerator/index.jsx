@@ -28,6 +28,17 @@ const PasswordGenerator = () => {
   const [numbers, setNumbers] = useState(false);
   const [symbols, setSymbols] = useState(false);
 
+  const createPassword = (characters, passwordLength) => {
+    let result = '';
+
+    for (let i = 0; i < passwordLength; i++) {
+      const characterIndex = Math.round(Math.random() * characters.length);
+      result += characters.charAt(characterIndex);
+    }
+
+    return result;
+  };
+
   const generatePasswordString = passwordLength => {
     let characterList = '';
 
@@ -53,17 +64,6 @@ const PasswordGenerator = () => {
 
     setPassword(passwordResult);
     setIsPassGenerated(true);
-  };
-
-  const createPassword = (characters, passwordLength) => {
-    let result = '';
-
-    for (let i = 0; i < passwordLength; i++) {
-      const characterIndex = Math.round(Math.random() * characters.length);
-      result += characters.charAt(characterIndex);
-    }
-
-    return result;
   };
 
   const resetPasswordState = () => {
