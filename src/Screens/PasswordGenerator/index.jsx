@@ -85,7 +85,6 @@ const PasswordGenerator = () => {
             initialValues={{passwordLength: ''}}
             validationSchema={PasswordSchema}
             onSubmit={values => {
-              console.log('values.......', values);
               generatePasswordString(Number(values.passwordLength));
             }}
             onReset={resetPasswordState}>
