@@ -4,6 +4,7 @@ import {NavigationContainer} from '@react-navigation/native';
 
 import PasswordGenerator from './src/Screens/PasswordGenerator';
 import ColorGenerator from './src/Screens/ColorGenerator';
+import RollDice from './src/Screens/RollDice/RollDice';
 
 function App() {
   return (
@@ -12,7 +13,8 @@ function App() {
       <SafeAreaView style={{flex: 1}}>
         <>
           {/* <PasswordGenerator /> */}
-          <ColorGenerator />
+          {/* <ColorGenerator /> */}
+          <RollDice />
         </>
       </SafeAreaView>
     </>
