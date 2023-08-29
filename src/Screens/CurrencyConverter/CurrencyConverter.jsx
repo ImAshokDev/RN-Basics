@@ -1,31 +1,18 @@
 import React, {useState} from 'react';
-import {
-  View,
-  Text,
-  StyleSheet,
-  FlatList,
-  SafeAreaView,
-  TouchableOpacity,
-} from 'react-native';
+import {View, Text, StyleSheet, FlatList, TouchableOpacity} from 'react-native';
+import Snackbar from 'react-native-snackbar';
 
 import InputField from './InputField';
 
 import {currencyByRupee} from './constant';
-import Snackbar from 'react-native-snackbar';
 
 const CurrencyConverter = () => {
-  const [inputValue, setInputValue] = useState(null);
-  const [targetValue, setTargetValue] = useState(null);
-  const [resultValue, setResultValue] = useState(null);
-
-  function onChange(val) {
-    setInputValue(val);
-  }
+  const [inputValue, setInputValue] = useState('');
+  const [targetValue, setTargetValue] = useState('');
+  const [resultValue, setResultValue] = useState('');
 
   function currencyConverter(item) {
     if (!inputValue) {
-      console.log('Enter INR value');
-
       return Snackbar.show({
         text: 'Enter a value to convert',
         backgroundColor: '#D71313',
@@ -34,10 +21,11 @@ const CurrencyConverter = () => {
     }
 
     const inputAmount = parseFloat(inputValue);
+
     if (!isNaN(inputAmount)) {
       const convertedValue = inputValue * item?.value;
       const result = `${convertedValue.toFixed(2)}`;
-      console.log('result.......', result);
+
       setResultValue(result);
       setTargetValue(item);
     } else {
@@ -57,7 +45,7 @@ const CurrencyConverter = () => {
           <View style={styles.inputField}>
             <InputField
               value={inputValue}
-              onChangeText={onChange}
+              onChangeText={setInputValue}
               keyboardType={'number-pad'}
               inputStyles={styles.inputStyles}
             />
