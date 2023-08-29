@@ -5,6 +5,7 @@ import {NavigationContainer} from '@react-navigation/native';
 import PasswordGenerator from './src/Screens/PasswordGenerator';
 import ColorGenerator from './src/Screens/ColorGenerator';
 import RollDice from './src/Screens/RollDice/RollDice';
+import CurrencyConverter from './src/Screens/CurrencyConverter/CurrencyConverter';
 
 function App() {
   return (
@@ -14,7 +15,8 @@ function App() {
         <>
           {/* <PasswordGenerator /> */}
           {/* <ColorGenerator /> */}
-          <RollDice />
+          {/* <RollDice /> */}
+          <CurrencyConverter />
         </>
       </SafeAreaView>
     </>
