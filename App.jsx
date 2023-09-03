@@ -1,11 +1,12 @@
 import React from 'react';
-import {SafeAreaView, View, StatusBar} from 'react-native';
-import {NavigationContainer} from '@react-navigation/native';
+import {SafeAreaView, StatusBar} from 'react-native';
+import Toast from 'react-native-toast-message';
 
 import PasswordGenerator from './src/Screens/PasswordGenerator';
 import ColorGenerator from './src/Screens/ColorGenerator';
 import RollDice from './src/Screens/RollDice/RollDice';
 import CurrencyConverter from './src/Screens/CurrencyConverter/CurrencyConverter';
+import {TicTacToe} from './src/Screens/TicTacToe/TicTacToe';
 
 function App() {
   return (
@@ -16,9 +17,11 @@ function App() {
           {/* <PasswordGenerator /> */}
           {/* <ColorGenerator /> */}
           {/* <RollDice /> */}
-          <CurrencyConverter />
+          {/* <CurrencyConverter /> */}
+          <TicTacToe />
         </>
       </SafeAreaView>
+      <Toast />
     </>
   );
 }
