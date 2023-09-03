@@ -44,9 +44,9 @@ const CurrencyConverter = () => {
           <Text style={styles.rupeeSymbol}>₹</Text>
           <View style={styles.inputField}>
             <InputField
-              value={inputValue}
+              // value={inputValue}
               onChangeText={setInputValue}
-              keyboardType={'number-pad'}
+              keyboardType={'numeric'}
               inputStyles={styles.inputStyles}
             />
           </View>
@@ -54,7 +54,9 @@ const CurrencyConverter = () => {
 
         <View style={styles.resultView}>
           <Text style={styles.currencySymbol}>{targetValue?.symbol}</Text>
-          <Text style={styles.currencyValue}>{resultValue}</Text>
+          <Text style={styles.currencyValue}>
+            {inputValue}-{resultValue}
+          </Text>
         </View>
       </View>
     );
@@ -66,17 +68,19 @@ const CurrencyConverter = () => {
         <Text style={styles.title}>Currency Converter</Text>
       </View>
 
+      {renderHeader()}
+
       <View style={styles.contentView}>
         <FlatList
           showsVerticalScrollIndicator={false}
           numColumns={2}
           data={currencyByRupee}
           keyExtractor={item => item.name}
-          ListHeaderComponent={renderHeader}
+          // ListHeaderComponent={renderHeader}
           renderItem={({item, index}) => {
             return (
               <TouchableOpacity
-                style={{flexGrow: 1}}
+                style={{flexGrow: 1, flexBasis: 1}}
                 key={index}
                 activeOpacity={0.6}
                 onPress={() => currencyConverter(item)}>
