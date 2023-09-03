@@ -115,7 +115,7 @@ export function TicTacToe() {
         }
         break;
       case 'cross':
-        if ('circle' === mySelect) {
+        if ('cross' === mySelect) {
           return 'You Won!!! 🏆';
         } else {
           return 'You Lost 😱';
